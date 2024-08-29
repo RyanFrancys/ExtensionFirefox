@@ -11,16 +11,6 @@ a.forEach((x) => {
   x.innerText = aux;
 });
 
-//Atualiza na tela de comprovante de mátricula
-a = document.querySelectorAll("#matriculas tbody .horario");
-
-a.forEach((x) => {
-  aux = Convert(x.innerText.split(" ")).toString();
-  aux = aux.replaceAll(",", "");
-  aux = aux.replaceAll(" e ", "\n");
-  x.innerText = aux;
-});
-
 function Convert(z) {
   retorno = new Array();
   for (j = 0; j < z.length; j++) {

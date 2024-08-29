@@ -8,6 +8,22 @@ a.forEach((x) => {
   x.innerText = aux;
 });
 
+// Cria o dicionario relacionando código e máteria
+var mat = new Map();
+document.getElementById("matriculas").querySelectorAll("tbody tr").forEach((x) => {
+    mat.set(
+      x.getElementsByClassName("codigo")[0].innerText,
+      x.getElementsByClassName("componente")[0].innerText,
+    );
+  });
+
+document.querySelectorAll("#horario tbody tr td").forEach((x) => {
+  console.log(x.innerText);
+  if (mat.has(x.innerText)) {
+    x.innerText = mat.get(x.innerText);
+  }
+});
+
 function Convert(z) {
   retorno = new Array();
   for (j = 0; j < z.length; j++) {
